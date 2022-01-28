@@ -31,5 +31,16 @@ module.exports = {
     new miniCss({
       filename: 'style.css',
     }),
-  ]
+  ],
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000
+    // proxy: {
+    //   '/api/v1': 'http://localhost:3000',
+    // },
+  }
 };
