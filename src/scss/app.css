@@ -1,0 +1,39 @@
+header {
+  text-align: center;
+}
+
+.showcase {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.showcase .goods-item {
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 23%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.showcase .goods-item h3 {
+  color: blue;
+}
+
+.showcase .goods-item p {
+  color: red;
+}
+
+footer {
+  width: 80%;
+  margin: 0 auto;
+  border-top: 1px solid black;
+}
+/*# sourceMappingURL=app.css.map */
