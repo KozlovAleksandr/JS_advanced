@@ -14,11 +14,13 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.(s*)css$/,
-      use: [
-        miniCss.loader,
+      test: /\.s[ac]ss$/,
+      use: [{
+          loader: miniCss.loader,
+          options: {},
+        },
         'css-loader',
-        'sass-loader',
+        'sass-loader'
       ]
     }]
   },
@@ -30,6 +32,7 @@ module.exports = {
     }),
     new miniCss({
       filename: 'style.css',
+      chunkFilename: "[id].css",
     }),
   ],
 
@@ -37,10 +40,10 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    compress: true,
-    port: 9000
-    // proxy: {
-    //   '/api/v1': 'http://localhost:3000',
-    // },
+    // compress: true,
+    // port: 9000
+    proxy: {
+      '/api/v1': 'http://localhost:3000',
+    },
   }
 };

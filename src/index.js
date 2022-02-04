@@ -1,45 +1,39 @@
-import sum from './module'; // импорт одной функции
-import functions from './module'; // импорт объекта с несколькими функциями
-import {
-  miltiply
-} from './module'; // импорт функции с помощью деструктуризации
-
-// ----------START----------
-
-import './scss/app.scss';
-import _ from 'lodash';
 import getProductList from "./mock/data.js";
 import renderGoodsList from "./showcase.js";
-import {
-  send
-} from './utils';
 
-// const productList = getProductList(20);
-// renderGoodsList(productList);
+const productList = getProductList(20);
+renderGoodsList(productList);
+
+import _ from 'lodash';
+import './scss/app.css';
+
+import ApiHandler from './ApiHandler.js';
+import CartModel from './CartModel.js';
+import ShowcaseModel from './ShowcaseModel.js';
+import EventEmitter from './EventEmitter.js';
+
 
 const API_URL = 'http://localhost:3000/api/v1';
 
-let productList = [];
-let cart = [];
+const api = new ApiHandler(API_URL);
+const eventEmmiter = new EventEmitter();
 
-send((error) => {
-  console.log(err);
-}, (res) => {
-  let list = JSON.parse(res);
-  productList = list;
-  renderGoodsList(productList);
-}, `${API_URL}/catalog`);
+const cart = new CartModel(api, eventEmmiter);
+const showcase = new ShowcaseModel(api, eventEmmiter, cart);
 
-// Пользователь добавляет товар в корзину
-let buyed = {
-  id: 5,
-  title: "new",
-  price: 999
-};
-send((error) => {
-  console.log(err);
-}, (res) => {
-  cart.push(buyed);
-}, `${API_URL}/cart`, 'POST', JSON.stringify(buyed), {
-  "Content-Type": "application/json"
+eventEmmiter.subscribe('showcaseFeched', (data) => {
+  console.log(data);
 });
+
+eventEmmiter.subscribe('cartFeched', (data) => {
+  console.log(data);
+});
+
+showcase.fetch();
+cart.fetch()
+  .then((data) => {
+    console.log(`Данные получены`);
+  })
+  .catch((err) => {
+    console.log(`Данные не получены`);
+  });
