@@ -72,16 +72,16 @@ app.post('/api/v1/cart', (req, res) => {
   });
 });
 
-app.delete('/api/v1/cart', (req, res) => {
+app.delete('/api/v1/cart/:id', (req, res) => {
   fs.readFile(cart_path, 'utf-8', (err, data) => {
     if (!err) {
       const cart = JSON.parse(data); // парсим json строку (преобразуем в массив)
-      const i = cart.findIndex((item) => item.id == req.body.id);
+      const idx = cart.findIndex((item) => item.id == req.params.id);
       if (i < 0) {
         res.status(404).send('product not found');
         return;
       } else {
-        cart.splice(i, 1);
+        cart.splice(idx, 1);
       }
       fs.writeFile(cart_path, JSON.stringify(cart), 'utf-8', (err, data) => {
         res.sendStatus(201);

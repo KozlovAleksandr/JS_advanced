@@ -1,26 +1,55 @@
-export default class ProductList {
-  constructor(list) {
-    this.list = list;
+import EventEmitter from "./EventEmitter.mjs";
+
+export default class ProductList extends EventEmitter {
+  constructor() {
+    super();
+    this.list = [];
   }
 
-  getList() {
-    return this.list;
+  /**
+   * Согдание массива из списком товаров
+   * @param {*} list 
+   */
+  set(list) {
+    this.list = [...this.list, ...list];
+    this.emit('onSet', this.get());
   }
 
-  find(id) {
-    const index = this.list.findIndex((item) => item.id === id);
-    if (index >= 0) {
-      return this.list[index];
-    }
-    return false;
+  /**
+   * Создание копии списка товаров
+   * @returns копия списка товаров
+   */
+  get() {
+    return [...this.list];
   }
 
+  /**
+   * Создание копии товара по id
+   * @param {*} id
+   * @returns Копия товара , полученного по id
+   * Object.assign({}, {}) - создаёт новый объект , объединяя два объекта 
+   * переданных в качестве параментов
+   */
+  getById(id) {
+    return Object.assign({}, this.list.find((item) => item.id === id));
+  }
+
+  /**
+   * Добавление товара
+   * @param {*} item товар
+   */
+  add(item) {
+    this.list.push(item);
+    this.emit('onAdd', item);
+  }
+
+  /**
+   * Удаление товара
+   * @param {*} id 
+   */
   remove(id) {
-    const index = this.list.findIndex((item) => item.id === id);
-    if (index >= 0) {
-      this.list = [...this.list.slice(0, index), ...this.list.slice(index + 1)];
-      return true;
-    }
-    return false;
+    const idx = this.list.findIndex((item) => item.id === id);
+    this.list.splice(id, 1);
+    this.emit('onRemove', id);
   }
 }
