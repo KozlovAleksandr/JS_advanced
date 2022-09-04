@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  background-color: #cd3333;
+}
+
+header {
+  display: flex;
+}
+
+header button {
+  background-color: inherit;
+  width: 120px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+header button:hover {
+  background-color: #ddd;
+}
+
+header button.active {
+  background-color: rgb(30, 177, 131);
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: big;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+#content {
+  display: none;
+  padding: 1rem;
+}
+
+#content span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+form {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  padding: 7px 0;
+}
+
+form input {
+  display: block;
+  border: none;
+  background-color: rgb(223, 217, 211);
+  width: 100%;
+  padding: 7px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: teal;
+  margin: 5px 0;
+}
+
+form button {
+  background-color: teal;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+#playPause {
+  background-color: teal;
+  width: 220px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+footer {
+    height: 120px;
+}
+
+

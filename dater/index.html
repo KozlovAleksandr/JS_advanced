@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Main</title>
+    <script src="./js/switcher.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/timer.js"></script>
+    <script type="module" src="./js/countdown.js"></script>
+
+    <script src="./js/howler.js"></script>
+    <script>
+      const sound = new Howl({
+        src: ["./media/sound.mp3"],
+      });
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <button class="tablinks" onclick="openPage(event, 'datecalc_content')">
+        DATECALC
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'timer_content')">
+        TIMER
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'countdown_content')">
+        COUNTDOWN
+      </button>
+    </header>
+    <div class="container">
+      <div class="tabcontent" id="datecalc_content">
+        <form id="datecalc_form">
+          <h1>Калькулятор дат</h1>
+          <label>
+            <strong>Первая дата:</strong>
+            <input type="date" name="firstDate" />
+          </label>
+          <label>
+            <strong>Вторая дата:</strong>
+            <input type="date" name="secondDate" />
+          </label>
+          <button type="submit">Рассчитать промежуток</button>
+        </form>
+        <div id="datecalc__result" style="display: none">
+          <h1>Разница между датами:</h1>
+          <ul>
+            <li><span id="datecalc__years"></span>Года</li>
+            <li><span id="datecalc__months"></span>Месяцы</li>
+            <li><span id="datecalc__days"></span>Дни</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tabcontent" id="timer_content">
+        <form id="timer_form">
+          <h1>Таймер</h1>
+          <label id="timer_label">
+            <strong>Время для таймера</strong>
+            <input type="time" name="timerTime" />
+          </label>
+          <div id="timer_time" style="display: none">
+            <li><span id="hour"></span>Часы</li>
+            <li><span id="minutes"></span>Минуты</li>
+            <li><span id="seconds"></span>Секунды</li>
+          </div>
+          <button id="playPause">СТАРТ</button>
+        </form>
+      </div>
+
+      <div class="tabcontent" id="countdown_content">
+        <form id="countdown_form">
+          <h1>Обратный отсчёт</h1>
+          <label>
+            <strong>Дата для обратного отсчёта</strong>
+            <input type="date" name="countdownTo" />
+          </label>
+          <button type="submit">Запустить обратный отсчёт</button>
+        </form>
+
+        <div id="countdown" style="display: none">
+          <h1 id="headline">Осталось времени:</h1>
+          <ul>
+            <li><span id="countdown__days"></span>Дни</li>
+            <li><span id="countdown__hours"></span>Часы</li>
+            <li><span id="countdown__minutes"></span>Минуты</li>
+            <li><span id="countdown__seconds"></span>Секунды</li>
+          </ul>
+        </div>
+        <div id="content">
+          <span>Время пришло</span>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>

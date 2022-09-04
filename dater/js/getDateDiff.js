@@ -1,4 +1,4 @@
-import { DateTime } from "./luxor.js";
+import { DateTime } from "../js/luxor.js";
 
 function getDateDiff(dateFrom, dateTo) {
   if (dateFrom > dateTo) {
