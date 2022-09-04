@@ -1,7 +1,7 @@
 import { printError, printResult } from "./printResult.js";
 import getDateDiff from "./getDateDiff.js";
 
-const form = document.getElementById("datecalc");
+const form = document.getElementById("datecalc_form");
 
 form.onsubmit = (event) => {
   event.preventDefault();
