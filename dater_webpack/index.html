@@ -6,30 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/index.css" />
     <title>Main</title>
-    <script src="./js/switcher.js"></script>
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/timer.js"></script>
-    <script type="module" src="./js/countdown.js"></script>
-
-    <script src="./js/howler.js"></script>
+    <script src=".modules/howler.js"></script>
     <script>
       const sound = new Howl({
         src: ["./media/sound.mp3"],
       });
     </script>
-    
   </head>
   <body>
     <header>
-      <button class="tablinks" onclick="openPage(event, 'datecalc_content')">
-        DATECALC
-      </button>
-      <button class="tablinks" onclick="openPage(event, 'timer_content')">
-        TIMER
-      </button>
-      <button class="tablinks" onclick="openPage(event, 'countdown_content')">
-        COUNTDOWN
-      </button>
+      <button class="tablinks" name="datecalc_content">DATECALC</button>
+      <button class="tablinks" name="timer_content">TIMER</button>
+      <button class="tablinks" name="countdown_content">COUNTDOWN</button>
     </header>
     <div class="container">
       <div class="tabcontent" id="datecalc_content">
@@ -56,19 +44,21 @@
       </div>
 
       <div class="tabcontent" id="timer_content">
-        <form id="timer_form">
+
+        <div id="timer_form">
           <h1>Таймер</h1>
-          <label id="timer_label">
-            <strong>Время для таймера</strong>
-            <input type="time" name="timerTime" />
+          <label id="screen">
+            <input type="number" id="minutes" min="0" max="59" step: "1"
+            value="00">
+            <span>:</span>
+            <input type="number" id="seconds" min="0" max="59" step: "1"
+            value="00" autofocus>
           </label>
-          <div id="timer_time" style="display: none">
-            <li><span id="hour"></span>Часы</li>
-            <li><span id="minutes"></span>Минуты</li>
-            <li><span id="seconds"></span>Секунды</li>
+          <div id="btns">
+            <button class="btn act" id="play">СТАРТ</button>
+            <button class="btn" id="pause">ПАУЗА</button>
           </div>
-          <button id="playPause">СТАРТ</button>
-        </form>
+        </div>
       </div>
 
       <div class="tabcontent" id="countdown_content">
@@ -90,11 +80,12 @@
             <li><span id="countdown__seconds"></span>Секунды</li>
           </ul>
         </div>
-        <div id="content">
+        <div id="content" style="display: none">
           <span>Время пришло</span>
         </div>
       </div>
     </div>
     <footer></footer>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

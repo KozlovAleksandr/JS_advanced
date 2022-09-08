@@ -65,7 +65,7 @@ li span {
 }
 
 #content {
-  display: none;
+  display: block;
   padding: 1rem;
 }
 
@@ -114,9 +114,9 @@ form button {
   border-top: none;
 }
 
-#playPause {
+.btn {
   background-color: teal;
-  width: 220px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   color: white;
@@ -130,4 +130,53 @@ footer {
     height: 120px;
 }
 
+
+#screen {
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 55px;
+
+  input {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--colorfff);
+    text-align: center;
+    font-size: 60px;
+    color: rgb(3, 42, 42);
+  }
+}
+
+#screen > input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+
+
+#play:hover {
+  background-color: #388e3c;
+  color: var(--colorfff);
+}
+
+#pause:hover {
+  background-color: #ffc107;
+  color: var(--colorfff);
+}
+
+#play,
+#pause {
+  display: none;
+}
+
+#play.act,
+#pause.act {
+  display: grid;
+}
 
