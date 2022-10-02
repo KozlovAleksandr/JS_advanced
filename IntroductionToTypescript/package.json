@@ -1,0 +1,14 @@
+{
+  "name": "introductiontotypescript",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rm -rf public/scripts && tsc",
+    "build:dev": "rm -rf public/scripts && tsc -p tsconfig-dev.json",
+    "start": "http-server -p 3000"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^4.8.4"
+  }
+}

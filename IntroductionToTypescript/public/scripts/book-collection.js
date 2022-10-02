@@ -1,0 +1,8 @@
+import { Book } from "./book.js";
+export const books = [
+    new Book("Harry Potter “and the Philosopher\'s Stone", "fantasy", 980),
+    new Book("Lord of the Ring", "fantasy", 1001),
+    new Book("How to be productive", "lifestyle", 500),
+    new Book("Game of Thrones", "fantasy", 999),
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYm9vay1jb2xsZWN0aW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2Jvb2stY29sbGVjdGlvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsSUFBSSxFQUFFLE1BQU0sV0FBVyxDQUFDO0FBQ2pDLE1BQU0sQ0FBQyxNQUFNLEtBQUssR0FBRztJQUNuQixJQUFJLElBQUksQ0FBQyw0Q0FBNEMsRUFBRSxTQUFTLEVBQUUsR0FBRyxDQUFDO0lBQ3RFLElBQUksSUFBSSxDQUFDLGtCQUFrQixFQUFFLFNBQVMsRUFBRSxJQUFJLENBQUM7SUFDN0MsSUFBSSxJQUFJLENBQUMsc0JBQXNCLEVBQUUsV0FBVyxFQUFFLEdBQUcsQ0FBQztJQUNsRCxJQUFJLElBQUksQ0FBQyxpQkFBaUIsRUFBRSxTQUFTLEVBQUUsR0FBRyxDQUFDO0NBQzVDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCb29rIH0gZnJvbSBcIi4vYm9vay5qc1wiO1xuZXhwb3J0IGNvbnN0IGJvb2tzID0gW1xuICBuZXcgQm9vayhcIkhhcnJ5IFBvdHRlciDigJxhbmQgdGhlIFBoaWxvc29waGVyXFwncyBTdG9uZVwiLCBcImZhbnRhc3lcIiwgOTgwKSxcbiAgbmV3IEJvb2soXCJMb3JkIG9mIHRoZSBSaW5nXCIsIFwiZmFudGFzeVwiLCAxMDAxKSxcbiAgbmV3IEJvb2soXCJIb3cgdG8gYmUgcHJvZHVjdGl2ZVwiLCBcImxpZmVzdHlsZVwiLCA1MDApLFxuICBuZXcgQm9vayhcIkdhbWUgb2YgVGhyb25lc1wiLCBcImZhbnRhc3lcIiwgOTk5KSxcbl07XG4iXX0=
